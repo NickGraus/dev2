@@ -13,7 +13,7 @@ window.onload = function() {
   var block = document.getElementById("block");
   block.style.width = "100px";
   block.style.height = "100px";
-  block.style.background = "red";
+  block.style.background = "lightgreen";
 
   listItem.appendChild(listItemText);
   document.getElementsByClassName("nav")[0].appendChild(listItem);
