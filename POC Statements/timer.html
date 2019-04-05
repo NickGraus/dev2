@@ -22,8 +22,42 @@
       return i;
     }
 
+    function counter() {
+      var x = 0;
+
+      //Laat
+      function add() {
+        if (x == 100) {
+          x = 0;
+        } else {
+          document.getElementById('outputCounter').innerHTML = x++;
+        }
+      };
+      setInterval(add, 100);
+      add();
+    }
+
+    function setPosition() {
+      var number = document.getElementById('outputCounter');
+      var left = 100;
+      var top = 100;
+      number.style.position = "absolute";
+      number.style.left = left + 'px';
+      number.style.top = top + 'px';
+
+      function changePostion() {
+        left = Math.floor((Math.random() * 10) + 1);
+        top = Math.floor((Math.random() * 10) + 1);
+      }
+
+      setInterval(changePostion, 100);
+      changePosition();
+    }
+
     function loadFunctions() {
       showTime();
+      counter();
+      setPosition();
     }
 
     window.onload = loadFunctions;

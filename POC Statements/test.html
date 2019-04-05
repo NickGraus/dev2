@@ -2,29 +2,20 @@
 <html>
 
 <head>
-  <script type="text/javascript">
-    function counter() {
-      var i = 0;
-      function add() {
-        if (i == 100) clearInterval(this);
-        else document.getElementById('outputTime').innerHTML = i++;
-      };
-      // This block will be executed 100 times.
-      setInterval(add, 1000);
-      add();
-    } // End
 
-    function loadFunctions() {
-      counter();
-    }
-
-    window.onload = loadFunctions;
-  </script>
 </head>
 
 <body>
-  <div id="outputTime"></div>
-  <div id="outputCounter"></div>
+  <div id="output"></div>
+
+  <script type="text/javascript">
+    var gebruikersnaam = "Nick";
+    var woonplaats = "Eindhoven";
+    document.cookie = gebruikersnaam + " " + woonplaats;
+    var cookie = document.cookie;
+
+    document.getElementById('output').innerHTML = cookie;
+  </script>
 </body>
 
 </html>
